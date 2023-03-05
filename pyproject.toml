@@ -1,0 +1,56 @@
+[tool.poetry]
+name = "backend-coding-challenge"
+version = "0.1.0"
+description = "Locoia's backend challenge"
+authors = ["Marcio Gualtieri"]
+readme = "README.md"
+packages = [{include = "gistapi"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Flask = "2.2.2"
+requests = "2.28.1"
+aiohttp = "^3.8.4"
+gunicorn = "^20.1.0"
+types-requests = "^2.28.11.15"
+flask-expects-json = "^1.7.0"
+
+[tool.poetry.group.dev.dependencies]
+Pytest = "7.2.1"
+requests-mock = "^1.10.0"
+aioresponses = "^0.7.4"
+black = "^23.1.0"
+honcho = "^1.1.0"
+isort = "^5.12.0"
+autoflake = "^2.0.1"
+mypy = "^1.0.1"
+pytest-cov = "^4.0.0"
+
+
+[tool.poetry.group.autoflake.dependencies]
+isort = "^5.12.0"
+
+
+[tool.poetry.group.pytest-cov.dependencies]
+isort = "^5.12.0"
+
+
+[tool.poetry.group.pytest-html.dependencies]
+isort = "^5.12.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+ignore_missing_imports = true
+disallow_subclassing_any = false
+disallow_untyped_decorators = false
+follow_imports = "skip"
+strict = true
+exclude = [
+    "conftest\\.py"
+]
+
+[tool.isort]
+profile = "black"
