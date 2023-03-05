@@ -27,9 +27,7 @@ However, would make sense that the application imposes its own rate limits. A da
 
 There are several ways to do that:
 
-1. We could write [Helm](https://helm.sh/docs/topics/charts/) charts and use the included [Dockerfile](./Dockerfile) to deploy the app to any Kuberntes cluster in the cloud (AWS, GCP, Azure). In my opinion, that's the best option, given that it makes it cloud provider independent.
-
-The include Dockerfile, uses [Gunicorn](https://gunicorn.org/) as the WSGI HTTP server.
+1. We could write [Helm](https://helm.sh/docs/topics/charts/) charts and use the included [Dockerfile](./Dockerfile) to deploy the app to any Kuberntes cluster in the cloud (AWS, GCP, Azure). In my opinion, that's the best option, given that it makes it cloud provider independent. The included Dockerfile uses [Gunicorn](https://gunicorn.org/) as the WSGI HTTP server.
 
 2. We could deploy the application using a Python package such as [Zappa](https://github.com/zappa/Zappa). The only caveat here is that Zappa only supports AWS to my knowledge.
 
